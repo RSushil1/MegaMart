@@ -5,8 +5,8 @@ const AdminMenu = () => {
   return (
     <>
       <div className="text-centre">
-        <div className="list-group">
-          <h4>Admin Panel</h4>
+        <div className="list-group border border-info">
+        <NavLink className="btn btn-info" to="/dashboard/admin">Admin Menu</NavLink>
           <NavLink
             to="/dashboard/admin/create-category"
             className="list-group-item list-group-item-action"
@@ -19,9 +19,6 @@ const AdminMenu = () => {
           </NavLink>
           <NavLink to="/dashboard/admin/users" className="list-group-item list-group-item-action">
             User
-          </NavLink>
-          <NavLink to="" className="list-group-item list-group-item-action">
-            A fourth link item
           </NavLink>
         </div>
       </div>

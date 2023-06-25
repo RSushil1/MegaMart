@@ -6,8 +6,8 @@ const UserMenu = () => {
   return (
     <>
     <div className="text-centre">
-      <div className="list-group">
-        <h4>Dashboard</h4>
+      <div className="list-group border border-info">
+        <NavLink className="btn btn-info" to="/dashboard/user">Dashboard</NavLink>
         <NavLink
           to="/dashboard/user/profile"
           className="list-group-item list-group-item-action"
