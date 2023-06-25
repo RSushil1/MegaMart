@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* font-family: 'Playfair Display', serif; */
+/* font-family: 'Poppins', sans-serif; */
+
+/* navbar */
+
+.navbar{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.active{
+  border-bottom: solid rebeccapurple;
+}
+
+.footer{
+  color: white;
+  padding: 25px;
+  background: black;
+  text-align: center;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+  padding:10px;
+}
+
+.footer a:hover{
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(rgb(88, 88, 250), rgb(92, 206, 255));
+}
+.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(rgb(88, 88, 250), rgb(92, 206, 255));
+  
+}
+.heading{
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  line-height: 26px;
+}
+
+.text{
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  line-height: 26px;
+}
+.text404{
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  line-height: 26px;
+}
