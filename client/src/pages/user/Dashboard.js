@@ -1,9 +1,9 @@
 import React from 'react'
 import UserMenu from '../../components/layout/UserMenu'
-import { useAuth } from '../../context/auth'
+import { UseAuth } from '../../context/auth'
 
 const Dashboard = () => {
-  const [auth] = useAuth();
+  const [auth] = UseAuth();
   return (
     <div>
        <div className="container m-3 p-3">

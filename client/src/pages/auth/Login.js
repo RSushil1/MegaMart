@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { useAuth } from '../../context/auth'
+import { UseAuth } from '../../context/auth'
 
 const Login = () => {
   const [email, SetEmail] = useState("");
   const [password, SetPassword] = useState("");
   const navigate = useNavigate();
-  const [auth,setAuth] = useAuth();
+  const [auth,setAuth] = UseAuth();
   const location = useLocation();
 
   const handleSubmit = async (e) => {
