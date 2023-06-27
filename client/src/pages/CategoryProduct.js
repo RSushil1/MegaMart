@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "../styles/CategoryProductStyles.css";
 import axios from "axios";
 const CategoryProduct = () => {
   const params = useParams();
@@ -9,6 +10,7 @@ const CategoryProduct = () => {
 
   useEffect(() => {
     if (params?.slug) getPrductsByCat();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.slug]);
   const getPrductsByCat = async () => {
     try {
@@ -27,7 +29,7 @@ const CategoryProduct = () => {
         <h4 className="text-center">Category - {category?.name}</h4>
         <h6 className="text-center">{products?.length} result found </h6>
         <div className="row">
-          <div className="col-md-9 offset-1">
+          <div className="col-md-12 offset-1">
             <div className="d-flex flex-wrap">
               {products?.map((p) => (
                 <div className="card m-2" key={p._id}>

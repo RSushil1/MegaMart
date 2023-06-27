@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import "../styles/ProductDetailsStyles.css";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -11,6 +12,7 @@ const ProductDetails = () => {
   //initial p details
   useEffect(() => {
     if (params?.slug) getProduct();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.slug]);
   //getProduct
   const getProduct = async () => {
@@ -38,7 +40,7 @@ const ProductDetails = () => {
   return (
     <>
       <div className="row container product-details">
-        <div className="col-md-6">
+        <div className="col-md-3 m-3">
           <img
             src={`http://localhost:4000/api/v1/product/product-photo/${product._id}`}
             className="card-img-top"
@@ -47,7 +49,7 @@ const ProductDetails = () => {
             width={"150px"}
           />
         </div>
-        <div className="col-md-6 product-details-info">
+        <div className="col-md-6 m-3 product-details-info">
           <h1 className="text-center">Product Details</h1>
           <hr />
           <h6>Name : {product.name}</h6>

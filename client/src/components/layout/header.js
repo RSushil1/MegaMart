@@ -38,7 +38,9 @@ const header = () => {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <Link className="navbar-brand">Mega Mart</Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="d-flex justify-content-center">
               <SearchInput />
+              </li>
               <li className="nav-item">
                 <NavLink to="/" className="nav-link text-light text-light">
                   Home
