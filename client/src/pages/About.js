@@ -3,7 +3,12 @@ import React from 'react'
 const About = () => {
   return (
     <div>
-      <h1>About</h1>
+      <div className='row'>
+        <div className='col-md-3'>
+          <img src="/image/l.png"/>
+        </div>
+        <div className='col-md-9'></div>
+      </div>
     </div>
   )
 }

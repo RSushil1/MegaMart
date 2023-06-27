@@ -11,7 +11,7 @@ const AdminOrders = () => {
     "Not Process",
     "Processing",
     "Shipped",
-    "deliverd",
+    "delivered",
     "cancel",
   ]);
   const [changeStatus, setCHangeStatus] = useState("");
@@ -42,7 +42,7 @@ const AdminOrders = () => {
   };
   return (
     <>
-      <div className="row dashboard">
+      <div className="row container dashboard">
         <div className="col-md-3">
           <AdminMenu />
         </div>

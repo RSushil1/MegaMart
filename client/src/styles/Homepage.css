@@ -3,7 +3,7 @@
 }
 
 .home-page h1 {
-  color: gray;
+  color: rgb(51, 90, 208);
   font-family: "Playfair Display", serif;
 }
 
@@ -30,12 +30,12 @@
   width: 100%;
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .home-page .card-text {
-  color: rgb(90, 89, 89);
+  color: rgb(86, 86, 86);
   font-size: small;
 }
 
@@ -51,8 +51,8 @@ filters
 ============== */
 .filters h4 {
   margin-top: 100px;
-  color: gray !important;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+  color: rgb(21, 84, 211) !important;
+  border: 1px solid rgba(128, 128, 128, 0.337);
 }
 
 .ant-checkbox-wrapper:first-of-type {
@@ -68,7 +68,7 @@ filters
 }
 
 .filters button {
-  background-color: black;
+  background-color: rgb(125, 60, 199);
   width: 100%;
   border: none;
   border-radius: 0;

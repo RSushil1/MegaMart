@@ -8,9 +8,9 @@ import { Badge } from "antd";
 import { UseCart } from "../../context/cart";
 
 const header = () => {
-  const [auth, setAuth] = UseAuth()
+  const [auth, setAuth] = UseAuth();
   const [cart] = UseCart();
-  const categories = UseCategory()
+  const categories = UseCategory();
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -22,7 +22,19 @@ const header = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-primary shadow">
+      <nav className="navbar navbar-expand-lg bg-primary shadow fixed-top">
+      <div className="container-fluid">
+              <NavLink className="navbar-brand text-light" to="/">
+                <img
+                  src="/image/tl.png"
+                  alt="Logo"
+                  width={50}
+                  height={35}
+                  className="d-inline-block align-text-top ms-auto "
+                />
+                MegaMart
+              </NavLink>
+            </div>
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -36,19 +48,18 @@ const header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link className="navbar-brand">Mega Mart</Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="d-flex justify-content-center">
-              <SearchInput />
+                <SearchInput />
               </li>
               <li className="nav-item">
-                <NavLink to="/" className="nav-link text-light text-light">
+                <NavLink to="/" className="nav-link text-light">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle text-light"
                   to={"/categories"}
                   data-bs-toggle="dropdown"
                 >
@@ -89,7 +100,7 @@ const header = () => {
                 <div className="btn-group">
                   <button
                     type="button"
-                    className="btn btn-info dropdown-toggle"
+                    className="btn btn-outline-success loginName"
                     data-bs-toggle="dropdown"
                     data-bs-display="static"
                     aria-expanded="false"
@@ -97,17 +108,7 @@ const header = () => {
                     {auth?.user?.name}
                   </button>
                   <ul className="dropdown-menu dropdown-menu-lg-end">
-                    <li>
-                      <NavLink
-                        className="dropdown-item"
-                        type="button"
-                        to="/login"
-                        onClick={handleLogout}
-                      >
-                        Logout
-                      </NavLink>
-                    </li>
-                    <li>
+                  <li>
                       <NavLink
                         className="dropdown-item"
                         type="button"
@@ -118,13 +119,30 @@ const header = () => {
                         Dashboard
                       </NavLink>
                     </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item text-danger"
+                        type="button"
+                        to="/login"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </NavLink>
+                    </li>
+                    
                   </ul>
                 </div>
               )}
               <li className="nav-item">
                 <NavLink to="/cart" className="nav-link">
                   <Badge count={cart?.length} showZero offset={[10, -5]}>
-                    Cart
+                  <img
+                  src="/image/cart.png"
+                  alt="Logo"
+                  width={35}
+                  height={25}
+                  className="d-inline-block align-text-top ms-auto"
+                />
                   </Badge>
                 </NavLink>
               </li>

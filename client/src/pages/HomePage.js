@@ -119,10 +119,10 @@ const HomePage = () => {
     }
   };
   return (
-    <div className=" row mt-3 home-page">
+    <div className=" home-page">
       <div
         id="carouselExampleAutoplaying"
-        className="carousel slide"
+        className="carousel slide banner-img "
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">
@@ -130,10 +130,10 @@ const HomePage = () => {
             <img src="/image/b1.png" className="d-block w-100 " alt="..." />
           </div>
           <div className="carousel-item">
-            <img src="/image/b2.jpg" className="d-block w-100  " alt="..." />
+            <img src="/image/b3.jpg" className="d-block w-100  " alt="..." />
           </div>
           <div className="carousel-item">
-            <img src="/image/b3.jpg" className="d-block w-100 " alt="..." />
+            <img src="/image/b2.jpg" className="d-block w-100 " alt="..." />
           </div>
         </div>
         <button
@@ -155,7 +155,8 @@ const HomePage = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-        <div className="col-md-3 filters">
+    <div className="row mt-3 ms-5 ">
+        <div className="col-md-3 boarder shadow filters">
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
             {categories?.map((c) => (
@@ -191,7 +192,7 @@ const HomePage = () => {
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
-              <div className="card m-2 w-25" key={p._id}>
+              <div className="card ms-auto mb-3 shadow" key={p._id}>
                 <img
                   src={`http://localhost:4000/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
@@ -256,6 +257,7 @@ const HomePage = () => {
             )}
           </div>
         </div>
+      </div>
       </div>
   );
 };

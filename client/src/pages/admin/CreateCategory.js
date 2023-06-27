@@ -87,8 +87,8 @@ const CreateCategory = () => {
   };
 
   return (
-    <div>
-      <div className="container m-3 p-3">
+    <>
+      <div className="container dashboard ms-auto m-3 p-3">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
@@ -236,7 +236,7 @@ const CreateCategory = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
