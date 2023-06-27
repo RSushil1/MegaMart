@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AdminMenu from "../../components/layout/AdminMenu";
+import AdminMenu from "../../components/Layout/AdminMenu";
 import axios from "axios";
 import { toast } from "react-toastify";
 import CategoryForm from "../../components/Form/CategoryForm";
@@ -10,8 +10,6 @@ const CreateCategory = () => {
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
-
-  
 
   //handle form
   const handleSubmit = async (e) => {
@@ -132,31 +130,66 @@ const CreateCategory = () => {
                             >
                               Edit
                             </button>
-  <button type="button" className="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#exampleModa2">
-    Delete
-  </button>
-  {/* Modal */}
-  <div  className="modal fade bg-danger bg-opacity-50" id="exampleModa2" tabIndex={-1} aria-labelledby="exampleModalLabe2" aria-hidden="true">
-    <div className="modal-dialog">
-      <div className="modal-content">
-        <div className="modal-header">
-          <h1 className="modal-title fs-5" id="exampleModalLabel">Delete</h1>
-          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-        </div>
-        <div className="modal-body">
-        <h1 class="text-danger">Are you sure?</h1>
-      <p>Do you really want to delete these records? This process cannot be undone.</p>
-        </div>
-        <div className="modal-footer">
-          <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" className="btn btn-danger ms-2"
-                              onClick={() => {
-                                handleDelete(c._id);
-                              }}>Delete</button>
-        </div>
-      </div>
-    </div>
-  </div>
+                            <button
+                              type="button"
+                              className="btn btn-danger ms-2"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModa2"
+                            >
+                              Delete
+                            </button>
+                            {/* Modal */}
+                            <div
+                              className="modal fade bg-danger bg-opacity-50"
+                              id="exampleModa2"
+                              tabIndex={-1}
+                              aria-labelledby="exampleModalLabe2"
+                              aria-hidden="true"
+                            >
+                              <div className="modal-dialog">
+                                <div className="modal-content">
+                                  <div className="modal-header">
+                                    <h1
+                                      className="modal-title fs-5"
+                                      id="exampleModalLabel"
+                                    >
+                                      Delete
+                                    </h1>
+                                    <button
+                                      type="button"
+                                      className="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    />
+                                  </div>
+                                  <div className="modal-body">
+                                    <h1 class="text-danger">Are you sure?</h1>
+                                    <p>
+                                      Do you really want to delete these
+                                      records? This process cannot be undone.
+                                    </p>
+                                  </div>
+                                  <div className="modal-footer">
+                                    <button
+                                      type="button"
+                                      className="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      className="btn btn-danger ms-2"
+                                      onClick={() => {
+                                        handleDelete(c._id);
+                                      }}
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
 
                             {/* Modal */}
                             <div
@@ -173,7 +206,7 @@ const CreateCategory = () => {
                                       className="modal-title fs-5"
                                       id="exampleModalLabel"
                                     >
-                                       Update Collection
+                                      Update Collection
                                     </h1>
                                     <button
                                       type="button"
