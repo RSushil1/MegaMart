@@ -23,47 +23,46 @@ const header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-primary shadow fixed-top">
-      <div className="container-fluid">
-              <NavLink className="navbar-brand text-light" to="/">
-                <img
-                  src="/image/tl.png"
-                  alt="Logo"
-                  width={50}
-                  height={35}
-                  className="d-inline-block align-text-top ms-auto "
-                />
-                MegaMart
-              </NavLink>
-            </div>
         <div className="container-fluid">
+          <NavLink className="navbar-brand text-light" to="/">
+            <img
+              src="/image/tl.png"
+              alt="Logo"
+              width={50}
+              height={35}
+              className="d-inline-block align-text-top ms-auto "
+            />
+            MegaMart
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="d-flex justify-content-center">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <li className="d-flex justify-content-center">
                 <SearchInput />
               </li>
               <li className="nav-item">
-                <NavLink to="/" className="nav-link text-light">
+                <NavLink className="nav-link text-light" aria-current="page" to="/">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle text-light"
-                  to={"/categories"}
+                  role="button"
                   data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
-                  Categories
+                  Category
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
@@ -108,7 +107,7 @@ const header = () => {
                     {auth?.user?.name}
                   </button>
                   <ul className="dropdown-menu dropdown-menu-lg-end">
-                  <li>
+                    <li>
                       <NavLink
                         className="dropdown-item"
                         type="button"
@@ -129,7 +128,6 @@ const header = () => {
                         Logout
                       </NavLink>
                     </li>
-                    
                   </ul>
                 </div>
               )}

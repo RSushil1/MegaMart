@@ -83,7 +83,7 @@ const HomePage = () => {
     }
   };
 
-  // filter by cat
+  // filter by catagory
   const handleFilter = (value, id) => {
     let all = [...checked];
     if (value) {
