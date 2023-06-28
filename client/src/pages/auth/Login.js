@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
 
-    <div className='login'>
+    <div className='ms-auto mt-5 login'>
       <form className='border shadow p-5 m-5 bg-white'onSubmit={handleSubmit} >
       <div className='heading'><h1>Login</h1></div>
         <div className="mb-3 ">

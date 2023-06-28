@@ -8,7 +8,7 @@ const footer = () => {
       <p className='footer'>
         <Link to="/about">About</Link>
         |
-        <Link to="/contact">Contact</Link>
+        <Link to="/contacts">Contact</Link>
         |
         <Link to="/policy">Privacy Policy</Link>
       </p>

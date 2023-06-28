@@ -59,85 +59,87 @@ const Profile = () => {
         </div>
         <div className="col-md-8">
           <div className="form-container" style={{ marginTop: "-40px" }}>
-            <form
-              className="border p-5 shadow bg-white m-3"
-              onSubmit={handleSubmit}
-            >
-              <h1 className="heading p-2 text-center">Update Profile</h1>
-              <div className="row g-2 mb-2">
-                <div className="col-md">
-                  <div className="form-floating">
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="form-control"
-                      id="floatingInputGrid1"
-                      placeholder="name@example.com"
-                    />
-                    <label htmlFor="floatingInputGrid">Name</label>
-                  </div>
-                </div>
-                <div className="col-md">
-                  <div className="form-floating">
-                    <input
-                      type="text"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
-                      className="form-control"
-                      id="floatingInputGrid2"
-                      placeholder="name@example.com"
-                    />
-                    <label htmlFor="floatingInputGrid">Address</label>
-                  </div>
+            <form className="border m-5 p-5 shadow" onSubmit={handleSubmit}>
+              <h4 className="title text-center">USER PROFILE</h4>
+              <div className="mb-3 row">
+                <label htmlFor="text" className="col-sm-3 col-form-label">
+                  Name
+                </label>
+                <div className="col-sm-8">
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="Enter Your Name"
+                  autoFocus
+                />
                 </div>
               </div>
-              <div className="row g-2 mb-2">
-                <div className="col-md">
-                  <div className="form-floating">
-                    <input
-                      type="text"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="form-control"
-                      id="floatingInputGrid3"
-                      placeholder="name@example.com"
-                    />
-                    <label htmlFor="floatingInputGrid">Phone Number</label>
-                  </div>
+              <div className="mb-3 row">
+                <label htmlFor="text" className="col-sm-3 col-form-label">
+                  Email
+                </label>
+                <div className="col-sm-8">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="Enter Your Email "
+                  disabled
+                />
                 </div>
               </div>
-              <div className="row g-2 mb-2">
-                <div className="col-md">
-                  <div className="form-floating">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="form-control"
-                      id="floatingInputGrid5"
-                      placeholder="name@example.com"
-                      disabled
-                    />
-                    <label htmlFor="floatingInputGrid">Email</label>
-                  </div>
-                  <div className="form-floating">
-                    <div className="form-floating">
-                      <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        className="form-control"
-                        id="floatingInputGrid6"
-                        placeholder="name@example.com"
-                      />
-                      <label htmlFor="floatingInputGrid">Password</label>
-                    </div>
-                  </div>
+              <div className="mb-3 row">
+                <label htmlFor="text" className="col-sm-3 col-form-label">
+                  Password
+                </label>
+                <div className="col-sm-8">
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Enter Your Password"
+                />
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary btn-sm">
-                Submit
+              <div className="mb-3 row">
+                <label htmlFor="text" className="col-sm-3 col-form-label">
+                 Phone Number
+                </label>
+                <div className="col-sm-8">
+                <input
+                  type="text"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="Enter Your Phone"
+                />
+                </div>
+              </div>
+              <div className="mb-3 row">
+                <label htmlFor="text" className="col-sm-3 col-form-label">
+                  Address
+                </label>
+                <div className="col-sm-8">
+                <input
+                  type="text"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="Enter Your Address"
+                />
+                </div>
+              </div>
+              <button type="submit" className="btn btn-primary">
+                UPDATE
               </button>
             </form>
           </div>

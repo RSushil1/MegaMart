@@ -7,7 +7,7 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <div className="container m-3 p-3">
+      <div className="container dashboard ms-auto m-3 p-3">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
@@ -17,6 +17,7 @@ const AdminDashboard = () => {
                 <h3>Admin Name : {auth?.user?.name}</h3>
                 <h3>Email : {auth?.user?.email}</h3>
                 <h3>Contact : {auth?.user?.phone}</h3>
+                <h3>Address : {auth?.user?.address}</h3>
               </div>
           </div>
         </div>

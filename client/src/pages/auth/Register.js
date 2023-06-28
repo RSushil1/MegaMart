@@ -32,7 +32,7 @@ const Register = () => {
         }
     }
     return (
-        <div className='register'>
+        <div className='register ms-auto mt-5'>
             <form className='border p-5 shadow bg-white m-3' onSubmit={handleSubmit} >
             <h1 className='heading p-2 text-center'>Registration</h1>
                 <div className="row g-2 mb-2">

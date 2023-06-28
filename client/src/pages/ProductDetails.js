@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
+import { UseCart } from "../context/cart";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
+  const [cart, setCart] = UseCart();
   const params = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
@@ -39,7 +42,7 @@ const ProductDetails = () => {
   };
   return (
     <>
-      <div className="row container product-details">
+      <div className="row d-flex justify-content-center product-details">
         <div className="col-md-3 m-3">
           <img
             src={`http://localhost:4000/api/v1/product/product-photo/${product._id}`}
@@ -62,16 +65,24 @@ const ProductDetails = () => {
             })}
           </h6>
           <h6>Category : {product?.category?.name}</h6>
-          <button class="btn btn-secondary ms-1">ADD TO CART</button>
+          <button class="btn btn-secondary ms-1"
+                      onClick={() => {
+                        setCart([...cart, product]);
+                        localStorage.setItem(
+                          "cart",
+                          JSON.stringify([...cart, product])
+                        );
+                        toast.success("Item Added to cart");
+                      }}>ADD TO CART</button>
         </div>
       </div>
       <hr />
-      <div className="row container similar-products">
+      <div className="row d-flex justify-content-center m-5 p-3 similar-products">
         <h4>Similar Products ➡️</h4>
         {relatedProducts.length < 1 && (
           <p className="text-center">No Similar Products found</p>
         )}
-        <div className="d-flex flex-wrap">
+        <div className="d-flex justify-content-center flex-wrap">
           {relatedProducts?.map((p) => (
             <div className="card m-2" key={p._id}>
               <img
@@ -99,19 +110,6 @@ const ProductDetails = () => {
                   >
                     More Details
                   </button>
-                  {/* <button
-                  className="btn btn-dark ms-1"
-                  onClick={() => {
-                    setCart([...cart, p]);
-                    localStorage.setItem(
-                      "cart",
-                      JSON.stringify([...cart, p])
-                    );
-                    toast.success("Item Added to cart");
-                  }}
-                >
-                  ADD TO CART
-                </button> */}
                 </div>
               </div>
             </div>

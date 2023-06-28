@@ -3,7 +3,6 @@ import { UseCart } from "../context/cart";
 import { UseAuth } from "../context/auth";
 import { useNavigate } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react";
-import { AiFillWarning } from "react-icons/ai";
 import axios from "axios";
 import { toast } from 'react-toastify'
 import "../styles/CartStyles.css";
@@ -100,7 +99,7 @@ const CartPage = () => {
             <div className="col-md-7  p-0 m-0">
               {cart?.map((p) => (
                 <div className="row card flex-row" key={p._id}>
-                  <div className="col-md-4">
+                  <div className="col-md-2">
                     <img
                       src={`http://localhost:4000/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
@@ -109,12 +108,12 @@ const CartPage = () => {
                       height={"130px"}
                     />
                   </div>
-                  <div className="col-md-4">
-                    <p>{p.name}</p>
+                  <div className="col-md-6">
+                    <b>{p.name}</b>
                     <p>{p.description.substring(0, 30)}</p>
-                    <p>Price : {p.price}</p>
+                    <b className="text-info">Price : $ {p.price}</b>
                   </div>
-                  <div className="col-md-4 cart-remove-btn">
+                  <div className="col-md-2 cart-remove-btn">
                     <button
                       className="btn btn-danger"
                       onClick={() => removeCartItem(p._id)}

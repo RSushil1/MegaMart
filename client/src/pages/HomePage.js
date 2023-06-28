@@ -119,7 +119,7 @@ const HomePage = () => {
     }
   };
   return (
-    <div className=" home-page">
+    <div className="d-flex justify-content-center home-page">
       <div
         id="carouselExampleAutoplaying"
         className="carousel slide banner-img "
@@ -155,10 +155,10 @@ const HomePage = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-    <div className="row mt-3 ms-5 ">
+    <div className="row ms-5 ">
         <div className="col-md-3 boarder shadow filters">
           <h4 className="text-center">Filter By Category</h4>
-          <div className="d-flex flex-column">
+          <div className=" d-flex justify-content-center flex-column">
             {categories?.map((c) => (
               <Checkbox
                 key={c._id}
@@ -188,14 +188,14 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-        <div className="col-md-9 ">
+        <div className="col-md-9">
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card ms-auto mb-3 shadow" key={p._id}>
                 <img
                   src={`http://localhost:4000/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
+                  className="card-img-top img-fluid"
                   alt={p.name}
                 />
                 <div className="card-body">

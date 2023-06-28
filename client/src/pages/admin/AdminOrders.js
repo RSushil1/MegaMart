@@ -42,7 +42,7 @@ const AdminOrders = () => {
   };
   return (
     <>
-      <div className="row container dashboard">
+      <div className="row container dashboard ms-auto m-3 p-3">
         <div className="col-md-3">
           <AdminMenu />
         </div>

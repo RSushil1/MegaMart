@@ -13,7 +13,7 @@
 }
 
 .active{
-  border-bottom: solid rebeccapurple;
+  border-bottom: 1px solid rgb(16, 239, 255);
 }
 
 .footer{
@@ -82,7 +82,7 @@
   .search-form {
     margin-right: 10px;
     margin-top: 4px;
-    width: max-content;
+    width: 40vw;
   }
   .search-form input {
     border: black;

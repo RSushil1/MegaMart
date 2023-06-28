@@ -24,7 +24,7 @@ const Products = () => {
   }, []);
   return (
     <div>
-      <div className="row dashboard m-3 p-3 ">
+      <div className="container row dashboard ms-auto m-3 p-3">
         <div className="col-md-3">
           <AdminMenu />
         </div>

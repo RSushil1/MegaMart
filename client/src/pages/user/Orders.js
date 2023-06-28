@@ -47,7 +47,7 @@ const Orders = () => {
                         <td>{o?.status}</td>
                         <td>{o?.buyer?.name}</td>
                         <td>{moment(o?.createAt).fromNow()}</td>
-                        <td>{o?.payment.success ? "Success" : "Failed"}</td>
+                        <td className="text-primary">{o?.payment.success ? "Success" : "Failed"}</td>
                         <td>{o?.products?.length}</td>
                       </tr>
                     </tbody>
@@ -55,7 +55,7 @@ const Orders = () => {
                   <div className="container">
                     {o?.products?.map((p, i) => (
                       <div className="row mb-2 p-3 card flex-row" key={p._id}>
-                        <div className="col-md-4">
+                        <div className="col-md-2">
                           <img
                             src={`http://localhost:4000/api/v1/product/product-photo/${p._id}`}
                             className="card-img-top"
@@ -65,9 +65,9 @@ const Orders = () => {
                           />
                         </div>
                         <div className="col-md-8">
-                          <p>{p.name}</p>
+                          <b>{p.name}</b>
                           <p>{p.description.substring(0, 30)}</p>
-                          <p>Price : {p.price}</p>
+                          <p className="text-info">Price : $ {p.price}</p>
                         </div>
                       </div>
                     ))}

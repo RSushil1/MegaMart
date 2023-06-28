@@ -6,7 +6,7 @@ const AdminMenu = () => {
     <>
       <div className="text-centre">
         <div className="list-group border border-info">
-        <NavLink className="btn btn-info" to="/dashboard/admin">Admin Menu</NavLink>
+        <NavLink className="btn btn-info" to="/dashboard/admin">Admin Menu ➡️</NavLink>
           <NavLink
             to="/dashboard/admin/create-category"
             className="list-group-item list-group-item-action"
