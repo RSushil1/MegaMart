@@ -11,7 +11,7 @@ const AdminRoute = () => {
   useEffect(() => {
     const authCheck = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/v1/auth/admin-auth", {
+        const res = await axios.get("/api/v1/auth/admin-auth", {
           headers: {
             Authorization: auth?.token,
           },
