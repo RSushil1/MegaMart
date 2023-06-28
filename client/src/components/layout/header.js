@@ -103,7 +103,7 @@ const header = () => {
                     className="btn btn-outline-success loginName"
                     data-bs-toggle="dropdown"
                     data-bs-display="static"
-                    aria-expanded="false"
+                    aria-expanded="true"
                   >
                     {auth?.user?.name}
                   </button>
