@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from "../components/Layout/Layout";
 
 const Policy = () => {
   return (
-    <div>
+    <Layout>
       <div className="row d-flex justify-content-center mb-5" style={{ marginTop: "100px" }}>
         <div className="col-md-6 ">
           <img
@@ -15,7 +16,7 @@ const Policy = () => {
           <p>privacy policy</p>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import UseCategory from "../hooks/useCategory";
+import Layout from "../components/Layout/Layout";
 const Categories = () => {
   const categories = UseCategory();
   return (
-    <>
+    <Layout>
       <div className="container" style={{ marginTop: "100px" }}>
         <div className="row container">
           {categories.map((c) => (
@@ -18,7 +19,7 @@ const Categories = () => {
           ))}
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

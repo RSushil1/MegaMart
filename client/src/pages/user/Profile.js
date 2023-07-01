@@ -3,6 +3,8 @@ import UserMenu from "../../components/Layout/UserMenu";
 import { UseAuth } from "../../context/auth";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Layout from '../../components/Layout/Layout';
+
 const Profile = () => {
   //context
   const [auth, setAuth] = UseAuth();
@@ -52,6 +54,7 @@ const Profile = () => {
     }
   };
   return (
+    <Layout>
     <div className="container-fluid m-3 p-3 dashboard">
       <div className="row">
         <div className="col-md-3">
@@ -60,7 +63,7 @@ const Profile = () => {
         <div className="col-md-8">
           <div className="form-container" style={{ marginTop: "-40px" }}>
             <form className="border m-5 p-5 shadow" onSubmit={handleSubmit}>
-              <h4 className="title text-center">USER PROFILE</h4>
+              <h4 className="title text-center">UPDATE PROFILE</h4>
               <div className="mb-3 row">
                 <label htmlFor="text" className="col-sm-3 col-form-label">
                   Name
@@ -71,7 +74,7 @@ const Profile = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="form-control"
-                  id="exampleInputEmail1"
+                  id="exampleInputEmail31"
                   placeholder="Enter Your Name"
                   autoFocus
                 />
@@ -87,7 +90,7 @@ const Profile = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="form-control"
-                  id="exampleInputEmail1"
+                  id="exampleInputEmail32"
                   placeholder="Enter Your Email "
                   disabled
                 />
@@ -103,8 +106,9 @@ const Profile = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="form-control"
-                  id="exampleInputPassword1"
+                  id="exampleInputPassword33"
                   placeholder="Enter Your Password"
+                  disabled
                 />
                 </div>
               </div>
@@ -118,7 +122,7 @@ const Profile = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="form-control"
-                  id="exampleInputEmail1"
+                  id="exampleInputEmail34"
                   placeholder="Enter Your Phone"
                 />
                 </div>
@@ -133,7 +137,7 @@ const Profile = () => {
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   className="form-control"
-                  id="exampleInputEmail1"
+                  id="exampleInputEmail35"
                   placeholder="Enter Your Address"
                 />
                 </div>
@@ -146,6 +150,7 @@ const Profile = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

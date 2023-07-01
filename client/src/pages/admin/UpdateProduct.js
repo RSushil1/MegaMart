@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AdminMenu from "../../components/Layout/AdminMenu";
 import { toast } from 'react-toastify'
 import axios from "axios";
+import Layout from "../../components/Layout/Layout";
 import { Select } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 const { Option } = Select;
@@ -100,7 +101,7 @@ const UpdateProduct = () => {
     }
   };
   return (
-    <>
+    <Layout>
       <div className="container dashboard ms-auto  m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -226,7 +227,7 @@ const UpdateProduct = () => {
           </div>
         </div>
       </div>
-      </>
+      </Layout>
   );
 };
 

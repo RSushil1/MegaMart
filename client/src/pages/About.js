@@ -1,7 +1,9 @@
 import React from 'react'
+import Layout from "../components/Layout/Layout";
 
 const About = () => {
   return (
+    <Layout>
     <div className="d-flex justify-content-center mb-5 bg-primary p-2 text-dark bg-opacity-25" style={{ marginTop: "100px" }} >
       <div className="row contactus ">
         <div className="col-md-6 ">
@@ -17,6 +19,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    </Layout>
   )
 }
 

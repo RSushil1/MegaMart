@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
 import { UseCart } from "../context/cart";
 import { toast } from "react-toastify";
+import Layout from "../components/Layout/Layout";
 
 const ProductDetails = () => {
   const [cart, setCart] = UseCart();
@@ -41,7 +42,7 @@ const ProductDetails = () => {
     }
   };
   return (
-    <>
+    <Layout>
       <div className="row d-flex justify-content-center product-details">
         <div className="col-md-3 m-3">
           <img
@@ -116,7 +117,7 @@ const ProductDetails = () => {
           ))}
         </div>
       </div>
-      </>
+      </Layout>
   );
 };
 

@@ -1,9 +1,11 @@
 import React from "react";
 import { UseAuth } from "../../context/auth";
 import UserMenu from "./../../components/Layout/UserMenu";
+import Layout from '../../components/Layout/Layout';
 const Dashboard = () => {
   const [auth] = UseAuth();
   return (
+    <Layout>
     <div className="container-flui m-3 p-3 dashboard">
       <div className="row">
         <div className="col-md-3">
@@ -28,6 +30,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

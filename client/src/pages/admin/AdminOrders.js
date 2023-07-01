@@ -4,6 +4,7 @@ import AdminMenu from "../../components/Layout/AdminMenu";
 import { UseAuth } from "../../context/auth";
 import moment from "moment";
 import { Select } from "antd";
+import Layout from "../../components/Layout/Layout";
 const { Option } = Select;
 
 const AdminOrders = () => {
@@ -41,7 +42,7 @@ const AdminOrders = () => {
     }
   };
   return (
-    <>
+    <Layout>
       <div className="row container dashboard ms-auto m-3 p-3">
         <div className="col-md-3">
           <AdminMenu />
@@ -110,7 +111,7 @@ const AdminOrders = () => {
           })}
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

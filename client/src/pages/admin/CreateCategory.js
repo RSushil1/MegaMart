@@ -3,6 +3,7 @@ import AdminMenu from "../../components/Layout/AdminMenu";
 import axios from "axios";
 import { toast } from "react-toastify";
 import CategoryForm from "../../components/Form/CategoryForm";
+import Layout from "../../components/Layout/Layout";
 
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -87,7 +88,7 @@ const CreateCategory = () => {
   };
 
   return (
-    <>
+    <Layout>
       <div className="container dashboard ms-auto m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -236,7 +237,7 @@ const CreateCategory = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

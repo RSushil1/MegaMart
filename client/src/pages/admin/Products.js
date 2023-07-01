@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AdminMenu from "../../components/Layout/AdminMenu";
 import axios from "axios";
+import Layout from "../../components/Layout/Layout";
 import { toast } from 'react-toastify'
 
 import { Link } from "react-router-dom";
@@ -23,7 +24,7 @@ const Products = () => {
     getAllProducts();
   }, []);
   return (
-    <div>
+    <Layout>
       <div className="container row dashboard ms-auto m-3 p-3">
         <div className="col-md-3">
           <AdminMenu />
@@ -53,7 +54,7 @@ const Products = () => {
           </div>
         </div>
       </div>
-      </div>
+      </Layout>
   );
 };
 

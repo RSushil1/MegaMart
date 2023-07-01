@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Register = () => {
     const [name, SetName] = useState("")
@@ -32,8 +32,20 @@ const Register = () => {
         }
     }
     return (
-        <div className='register ms-auto mt-5'>
-            <form className='border p-5 shadow bg-white m-3' onSubmit={handleSubmit} >
+        <div className='register ms-auto mt-3'>
+             <h1>
+          <NavLink className="navbar-brand text-primary" to="/">
+            <img
+              src="/image/tl.png"
+              alt="Logo"
+              width={50}
+              height={35}
+              className="d-inline-block align-text-top ms-auto "
+            />
+            MegaMart
+          </NavLink>
+        </h1>
+            <form className='border p-5 shadow bg-white m-1' onSubmit={handleSubmit} >
             <h1 className='heading p-2 text-center'>Registration</h1>
                 <div className="row g-2 mb-2">
                     <div className="col-md">

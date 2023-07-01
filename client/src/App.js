@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Policy from "./pages/Policy";
 import PageNotFound from "./pages/PageNotFound";
-import Layout from "./components/Layout/layout"
 import Login from "./pages/auth/Login";
 import PrivateRoute from "./components/Routes/Private";
 import AdminRoute from "./components/Routes/AdminRoute";
@@ -23,11 +22,11 @@ import Profile from "./pages/user/Profile";
 import Orders from "./pages/user/Orders";
 import Dashboard from './pages/user/Dashboard';
 import AdminOrders from './pages/admin/AdminOrders';
+import ForgotPasssword from "./pages/auth/ForgotPasssword";
 
 function App() {
   return (
     <>
-      <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:slug" element={<ProductDetails />} />
@@ -48,6 +47,7 @@ function App() {
             <Route path="admin/product/:slug" element={<UpdateProduct />} />
             <Route path="admin/orders" element={<AdminOrders />} />
           </Route>
+          <Route path="/forgot-password" element={<ForgotPasssword/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
@@ -55,7 +55,6 @@ function App() {
           <Route path="/policy" element={<Policy />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </Layout>
     </>
   );
 }

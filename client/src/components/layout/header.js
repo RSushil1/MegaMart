@@ -24,7 +24,7 @@ const header = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-primary shadow fixed-top">
         <div className="container-fluid">
-          <NavLink className="navbar-brand text-light" to="/">
+          <NavLink className="navbar-brand" to="/">
             <img
               src="/image/tl.png"
               alt="Logo"
@@ -51,13 +51,13 @@ const header = () => {
                 <SearchInput />
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-light" aria-current="page" to="/">
+                <NavLink className="nav-link" aria-current="page" to="/">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link dropdown-toggle text-light"
+                  className="nav-link dropdown-toggle"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -66,14 +66,14 @@ const header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to={"/categories"}>
+                    <Link className="dropdown-item text-dark" to={"/categories"}>
                       All Categories
                     </Link>
                   </li>
                   {categories?.map((c) => (
                     <li>
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item text-dark"
                         to={`/category/${c.slug}`}
                       >
                         {c.name}
@@ -85,12 +85,7 @@ const header = () => {
               {!auth.user ? (
                 <>
                   <li className="nav-item">
-                    <NavLink to="/register" className="nav-link text-light">
-                      Register
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink to="/login" className="nav-link text-light">
+                    <NavLink to="/login" className="nav-link">
                       Login
                     </NavLink>
                   </li>
@@ -109,7 +104,7 @@ const header = () => {
                   <ul className="dropdown-menu dropdown-menu-lg-end">
                     <li>
                       <NavLink
-                        className="dropdown-item"
+                        className="dropdown-item text-dark"
                         type="button"
                         to={`/dashboard/${
                           auth?.user?.role === 1 ? "admin" : "user"
@@ -122,7 +117,7 @@ const header = () => {
                       <NavLink
                         className="dropdown-item text-danger"
                         type="button"
-                        to="/login"
+                        to="/"
                         onClick={handleLogout}
                       >
                         Logout

@@ -3,13 +3,14 @@ import { useSearch } from "../context/search";
 import { toast } from "react-toastify";
 import { UseCart } from "../context/cart";
 import { useNavigate } from "react-router-dom";
+import Layout from "../components/Layout/Layout";
 
 const Search = () => {
   const [values, setValues] = useSearch();
   const [cart, setCart] = UseCart();
   const navigate = useNavigate();
   return (
-    <>
+    <Layout>
       <div className="d-flex justify-content-center">
         <div className="text-center">
           <h1>Search Resuts</h1>
@@ -20,7 +21,7 @@ const Search = () => {
           </h6>
           <div className="d-flex justify-content-center flex-wrap mt-4">
             {values?.results.map((p) => (
-              <div className="card m-2" style={{ width: "18rem" }}>
+              <div className="card m-2 shadow" style={{ width: "18rem" }}>
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
@@ -57,7 +58,7 @@ const Search = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

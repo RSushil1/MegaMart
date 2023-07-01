@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Checkbox, Radio } from "antd";
+import {Radio } from "antd";
 import { Prices } from "../components/Prices";
 import { UseCart } from "../context/cart";
 import axios from "axios";
-import { toast } from "react-toastify";
+import {toast } from "react-toastify";
 import { AiOutlineReload } from "react-icons/ai";
+
+import Layout from '../components/Layout/Layout';
 import "../styles/Homepage.css";
 
 const HomePage = () => {
@@ -22,9 +24,7 @@ const HomePage = () => {
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(
-        "/api/v1/category/get-category"
-      );
+      const { data } = await axios.get("/api/v1/category/get-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -41,9 +41,7 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(
-        `/api/v1/product/product-list/${page}`
-      );
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -55,9 +53,7 @@ const HomePage = () => {
   //getTotal COunt
   const getTotal = async () => {
     try {
-      const { data } = await axios.get(
-        "/api/v1/product/product-count"
-      );
+      const { data } = await axios.get("/api/v1/product/product-count");
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -72,9 +68,7 @@ const HomePage = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(
-        `/api/v1/product/product-list/${page}`
-      );
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
@@ -106,20 +100,20 @@ const HomePage = () => {
   //get filterd product
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post(
-        "/api/v1/product/product-filters",
-        {
-          checked,
-          radio,
-        }
-      );
+      const { data } = await axios.post("/api/v1/product/product-filters", {
+        checked,
+        radio,
+      });
       setProducts(data?.products);
     } catch (error) {
       console.log(error);
     }
   };
   return (
+    <Layout>
+
     <div className="d-flex justify-content-center home-page">
+      <div>
       <div
         id="carouselExampleAutoplaying"
         className="carousel slide banner-img "
@@ -155,22 +149,33 @@ const HomePage = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-    <div className="row ms-5 ">
-        <div className="col-md-3 boarder shadow filters">
-          <h4 className="text-center">Filter By Category</h4>
-          <div className=" d-flex justify-content-center flex-column">
+      </div>
+      <div className="row ms-5">
+        <div className="col-md-3 filters">
+          <h4 className="text-center bg-primary text-light rounded">Filter By Category</h4>
+          <div className=" d-flex justify-content-center flex-column rounded border shadow p-2">
             {categories?.map((c) => (
-              <Checkbox
-                key={c._id}
-                onChange={(e) => handleFilter(e.target.checked, c._id)}
-              >
-                {c.name}
-              </Checkbox>
+              <div className="form-check form-switch">
+                <input
+                  key={c._id}
+                  onChange={(e) => handleFilter(e.target.checked, c._id)}
+                  className="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="flexSwitchCheckDefault"
+                >
+                  {c.name}
+                </label>
+              </div>
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
-          <div className="d-flex flex-column">
+          <h4 className="text-center mt-4 border bg-primary text-light rounded">Filter By Price</h4>
+          <div className="border shadow rounded">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
                 <div key={p._id}>
@@ -198,7 +203,7 @@ const HomePage = () => {
                   className="card-img-top img-fluid"
                   alt={p.name}
                 />
-                <div className="card-body">
+                <div className="card-body ">
                   <div className="card-name-price">
                     <h5 className="card-title">{p.name}</h5>
                     <h5 className="card-title card-price">
@@ -258,7 +263,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      </div>
+    </div>
+    </Layout>
   );
 };
 

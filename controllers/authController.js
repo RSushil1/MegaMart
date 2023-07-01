@@ -55,7 +55,7 @@ export const registerController = async (req, res) => {
   } catch (error) {
     res.status(500).send({
       success: false,
-      message: "Errro in Registeration",
+      message: "Error in Registeration",
       error,
     });
   }
@@ -66,18 +66,24 @@ export const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
     //validation
-    if (!email || !password) {
-      return res.status(404).send({
+    if (!email) {
+      return res.status(200).send({
         success: false,
-        message: "Invalid email or password",
+        message: "Please enter Email!",
+      });
+    }
+    if (!password) {
+      return res.status(200).send({
+        success: false,
+        message: "Please enter password!",
       });
     }
     //check user
     const user = await userModel.findOne({ email });
     if (!user) {
-      return res.status(404).send({
+      return res.status(200).send({
         success: false,
-        message: "Email is not registerd",
+        message: "Email is not registered! Please Sign Up",
       });
     }
     const match = await comparePassword(password, user.password);
@@ -105,7 +111,7 @@ export const loginController = async (req, res) => {
       token,
     });
   } catch (error) {
-    res.status(500).send({
+    res.status(200).send({
       success: false,
       message: "Error in login",
       error,

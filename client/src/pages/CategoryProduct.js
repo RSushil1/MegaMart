@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/CategoryProductStyles.css";
 import axios from "axios";
+import Layout from "../components/Layout/Layout";
 const CategoryProduct = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -25,7 +26,11 @@ const CategoryProduct = () => {
   };
 
   return (
+    <Layout>
       <div className="container mt-3 category">
+        <div className="spinner-border text-warning align-center " role="status">
+                    <span>Loading...</span>
+                </div>
         <h4 className="text-center">Category - {category?.name}</h4>
         <h6 className="text-center">{products?.length} result found </h6>
         <div className="row">
@@ -66,6 +71,7 @@ const CategoryProduct = () => {
           </div>
         </div>
       </div>
+      </Layout>
   );
 };
 

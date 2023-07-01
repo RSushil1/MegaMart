@@ -8,18 +8,6 @@ const layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <main style={{ minHeight: "80vh" }}>{children}</main>
       <Footer />
     </div>

@@ -3,6 +3,7 @@ import UserMenu from "../../components/Layout/UserMenu";
 import axios from "axios";
 import { UseAuth } from "../../context/auth";
 import moment from "moment";
+import Layout from '../../components/Layout/Layout';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -20,6 +21,7 @@ const Orders = () => {
     if (auth?.token) getOrders();
   }, [auth?.token]);
   return (
+    <Layout>
       <div className="container-flui p-3 m-3 dashboard">
         <div className="row">
           <div className="col-md-3">
@@ -78,6 +80,7 @@ const Orders = () => {
           </div>
         </div>
       </div>
+      </Layout>
   );
 };
 

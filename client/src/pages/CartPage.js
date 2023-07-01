@@ -6,6 +6,7 @@ import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
 import { toast } from 'react-toastify'
 import "../styles/CartStyles.css";
+import Layout from './../components/Layout/Layout';
 
 const CartPage = () => {
   const [auth, setAuth] = UseAuth();
@@ -76,7 +77,7 @@ const CartPage = () => {
     }
   };
   return (
-    <>
+    <Layout>
       <div className=" cart-page">
         <div className="row">
           <div className="col-md-12">
@@ -111,7 +112,7 @@ const CartPage = () => {
                   <div className="col-md-6">
                     <b>{p.name}</b>
                     <p>{p.description.substring(0, 30)}</p>
-                    <b className="text-info">Price : $ {p.price}</b>
+                    <b className="text-info">Price :${p.price}</b>
                   </div>
                   <div className="col-md-2 cart-remove-btn">
                     <button
@@ -170,6 +171,7 @@ const CartPage = () => {
                   ""
                 ) : (
                   <>
+                  <p className="text-info">For Test purpose type card no. 4242 4242 4242 4242</p>
                     <DropIn
                       options={{
                         authorization: clientToken,
@@ -194,7 +196,7 @@ const CartPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

@@ -1,12 +1,13 @@
 import React from "react";
 import AdminMenu from "../../components/Layout/AdminMenu";
 import { UseAuth } from "../../context/auth";
+import Layout from "../../components/Layout/Layout";
 
 const AdminDashboard = () => {
   const [auth] = UseAuth();
 
   return (
-    <>
+    <Layout>
       <div className="container dashboard ms-auto m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -22,7 +23,7 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
+import Layout from "../components/Layout/Layout";
 const Contact = () => {
   return (
-    <>
+    <Layout>
       <div className="row d-flex justify-content-center mb-5" style={{ marginTop: "100px" }}>
         <div className="col-md-6 ">
           <img
@@ -28,7 +29,7 @@ const Contact = () => {
           </p>
         </div>
       </div>
-      </>
+      </Layout>
   );
 };
 

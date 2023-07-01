@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/auth";
 import { CartProvider } from "./context/cart";
 import { SearchProvider } from "./context/search";
 import "antd/dist/reset.css";
+import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,18 @@ root.render(
     <SearchProvider>
       <CartProvider>
         <BrowserRouter>
+        <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
           <App />
         </BrowserRouter>
       </CartProvider>
