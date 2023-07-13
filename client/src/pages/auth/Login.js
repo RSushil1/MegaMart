@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import {toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { UseAuth } from "../../context/auth";
@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="ms-auto mt-3 login">
+      <div className="login ms-auto mt-3">
         <h1>
           <NavLink className="navbar-brand text-primary" to="/">
             <img
@@ -52,13 +52,13 @@ const Login = () => {
           </NavLink>
         </h1>
         <form
-          className="border shadow w-25 p-4 mt-1 bg-white"
+          className="border p-5 shadow bg-white m-1"
           onSubmit={handleSubmit}
         >
           <div className="heading">
             <h2>Login</h2>
           </div>
-          <div className="mb-3 ">
+          <div className=" container-fluid mb-3 ">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Email address
             </label>

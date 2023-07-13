@@ -112,7 +112,7 @@ const HomePage = () => {
   return (
     <Layout>
 
-    <div className="d-flex justify-content-center home-page">
+    <div className="container-fluid home-page">
       <div>
       <div
         id="carouselExampleAutoplaying"

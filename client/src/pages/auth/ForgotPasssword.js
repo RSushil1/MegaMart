@@ -47,7 +47,7 @@ const ForgotPasssword = () => {
           </NavLink>
         </h1>
         <form
-          className="border shadow w-25 p-4 m-2 bg-white"
+          className="border p-5 shadow bg-white m-1"
           onSubmit={handleSubmit}
         >
           <div className="heading">

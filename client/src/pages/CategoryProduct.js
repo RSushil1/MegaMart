@@ -8,16 +8,18 @@ const CategoryProduct = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (params?.slug) getPrductsByCat();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.slug]);
   const getPrductsByCat = async () => {
     try {
+      setLoading(true)
       const { data } = await axios.get(
         `/api/v1/product/product-category/${params.slug}`
       );
+      setLoading(false)
       setProducts(data?.products);
       setCategory(data?.category);
     } catch (error) {
@@ -28,11 +30,15 @@ const CategoryProduct = () => {
   return (
     <Layout>
       <div className="container mt-3 category">
-        <div className="spinner-border text-warning align-center " role="status">
-                    <span>Loading...</span>
-                </div>
-        <h4 className="text-center">Category - {category?.name}</h4>
+      {loading ? (
+                  <h4 className="text-center text-success">Loading...</h4>
+                ) : (
+                  <>
+                    <h4 className="text-center">Category - {category?.name}</h4>
         <h6 className="text-center">{products?.length} result found </h6>
+                  </>
+                )}
+        
         <div className="row">
           <div className="col-md-12 offset-1">
             <div className="d-flex flex-wrap">
